@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.OT6.Loading"
       mc:Ignorable="d" 
-      Height="1080" Width="1920"
+      MinHeight="1080" MinWidth="1920"
       Title="LoadingScreen">
 
     <Grid>
