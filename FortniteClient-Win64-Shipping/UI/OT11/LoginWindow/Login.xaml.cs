@@ -13,12 +13,12 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.LoginWindow
     /// </summary>
     public partial class Login : Page
     {
-        System.Timers.Timer timer = new System.Timers.Timer(30000);
         Requests request = new Requests();
 
         public Login()
         {
             InitializeComponent();
+            Logger.Log("Login page initialized. (OT11)");
             AudioPlayer.PlayMusic("pack://application:,,,/Content/Sounds/Fort_Music/Menu/fortnite_login_screen.ogg", volume: 0.4f, loop: true);
             GetAccessToken();
         }
@@ -49,6 +49,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.LoginWindow
 
         private async void GetAccessToken()
         {
+            Logger.Log("Attempting a POST request to /account/api/oauth/token. (OT11)");
             try
             {
                 var body = new Dictionary<string, string>
@@ -61,7 +62,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.LoginWindow
 
             catch (Exception ex)
             {
-                Logger.Log($"Cannot fetch access token from Authenticate function. | {ex}");
+                Logger.Log($"Login failed! Could not get access token from the backend. (OT11) | {ex}");
                 ErrorHandling.ThrowError();
             }
         }
@@ -79,6 +80,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.LoginWindow
 
         private async Task AttemptAuthentication()
         {
+            Logger.Log("Attempting to login via POST request from /account/api/oauth/token (OT11)");
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/fort_new_frontend_ui_click_13.ogg", 0.4f);
             ErrorText.Opacity = 0;
             LoginUI.Visibility = Visibility.Collapsed;
@@ -96,7 +98,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.LoginWindow
             }
             catch (Exception ex)
             {
-                Logger.Log($"Login failed | {ex}");
+                Logger.Log($"Login failed! (OT11) | {ex}");
                 ErrorHandling.ThrowError();
 
                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>

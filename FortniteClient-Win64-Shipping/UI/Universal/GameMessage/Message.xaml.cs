@@ -26,10 +26,12 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.GameMessage
             InitializeComponent();
             SetUI(header, desc, button);
             AnimationEngine.FadeIn(Grid, 0.20);
+            Logger.Log($"GlobalGameMessage: loaded. | {header}, {desc}, {button}");
         }
 
         private void SetUI(string header, string desc, string button)
         {
+            Logger.Log("GlobalGameMessage: Setting content.");
             headerText.Text = header;
             descText.Text = desc;
             buttonText.Text = button;
@@ -37,6 +39,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.GameMessage
 
         private async void Close(object sender, RoutedEventArgs e)
         {
+            Logger.Log("GlobalGameMessage: closed.");
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {

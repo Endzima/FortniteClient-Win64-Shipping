@@ -26,6 +26,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.Loading
         {
             InitializeComponent();
             StartLoadingAnim();
+            Logger.Log("Loading Online Test 6");
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 AnimationEngine.FadeIn(mainWindow.FG, 0.01);
@@ -40,6 +41,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.Loading
             await Task.Delay(2000);
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
+                Logger.Log("Triggering navigation to Login. (OT6)");
                 mainWindow.TriggerLogin();
             }
         }

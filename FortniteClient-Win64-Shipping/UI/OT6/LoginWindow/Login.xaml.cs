@@ -19,6 +19,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
         public Login()
         {
             InitializeComponent();
+            Logger.Log("Login page initialized. (OT6)");
             AudioPlayer.PlayMusic("pack://application:,,,/Content/Sounds/Fort_Music/Menu/fortnite_login_screen.ogg", volume: 0.4f, loop: true);
             PlayChimesCountdown();
             GetBuildInfo();
@@ -51,6 +52,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
 
         private async void GetBuildInfo()
         {
+            Logger.Log("Attempting to get build info from /fortnite/api/version (OT6)");
             try
             {
                 RequestSaving.BuildInfo info = await request.GetJSON<RequestSaving.BuildInfo>("fortnite/api/version");
@@ -64,7 +66,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
             }
             catch(Exception ex)
             {
-                Logger.Log($"HTTP Error | ${ex.ToString()}");
+                Logger.Log($"GET request failed! (OT6) | ${ex.ToString()}");
                 BuildInfo.Visibility = System.Windows.Visibility.Collapsed; 
             }
         }
@@ -83,7 +85,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
 
             catch (Exception ex)
             {
-                Logger.Log($"Cannot fetch access token from Authenticate function. | {ex}");
+                Logger.Log($"Cannot POST /account/api/oauth/token. HTTP error! (OT6) | {ex}");
                 ErrorHandling.ThrowError();
             }
         }
@@ -117,6 +119,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
 
         private async Task AttemptAuthentication()
         {
+            Logger.Log("Attempting authentication by POST from /account/api/oauth/token! (OT6)");
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/fort_new_frontend_ui_click_13.ogg", 0.4f);
             ErrorText.Opacity = 0;
             LoginUI.Visibility = Visibility.Collapsed;
@@ -134,7 +137,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT6.LoginWindow
             }
             catch (Exception ex)
             {
-                Logger.Log($"Login failed | {ex}");
+                Logger.Log($"Login failed! (OT6) | {ex}");
                 ErrorHandling.ThrowError();
 
                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>

@@ -24,6 +24,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
         public LoadNewVersion()
         {
             InitializeComponent();
+            Logger.Log($"LoadNewGame: Opened, loading {Engine.SelectedVersion}");
             descText2.Text = $"Currently loading {Engine.SelectedVersion}";
             ClearOld();
         }
@@ -34,6 +35,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
             {
                 if (Application.Current.MainWindow is MainWindow mainWindow)
                 {
+                    Logger.Log($"LoadNewGame: Clearing content from all frames before running {Engine.SelectedVersion}");
                     mainWindow.ClearAllFrames();
                 }
 
@@ -49,7 +51,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
         private async Task NavAfterLoading()
         {
             await Task.Delay(2000);
-
+            Logger.Log("Navigating to selected version.");
             try
             {
                 if (Engine.SelectedVersion == "ot10")

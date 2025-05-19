@@ -24,7 +24,16 @@ namespace FortniteClient_Win64_Shipping.ChooseVersion
         public ChooseVersion()
         {
             InitializeComponent();
-            AudioPlayer.PlayMusic("pack://application:,,,/Content/Sounds/Fort_Music/Menu/store_tem_music_a.ogg", volume: 0.4f, loop: true);
+
+            try
+            {
+                AudioPlayer.PlayMusic("pack://application:,,,/Content/Sounds/Fort_Music/Menu/store_tem_music_a.ogg", volume: 0.4f, loop: true);
+                Logger.Log("ChooseVersion | Music loaded.");
+            }
+            catch(Exception ex) 
+            {
+                Logger.Log($"Failed to play music! | An exception occured. | {ex}");
+            }
         }
 
         private async void LaunchOT6(object sender, RoutedEventArgs e)

@@ -20,6 +20,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
         {
             InitializeComponent();
             AudioPlayer.PlayMusic("pack://application:,,,/Content/Sounds/Fort_Music/Menu/fortnite_login_screen.ogg", volume: 0.4f, loop: true);
+            Logger.Log("Login page initialized. (OT10)");
             PlayChimesCountdown();
             GetBuildInfo();
             GetAccessToken();
@@ -53,6 +54,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
         {
             try
             {
+                Logger.Log("Attempting a GET request to fortnite/api/version. (OT10)");
                 RequestSaving.BuildInfo info = await request.GetJSON<RequestSaving.BuildInfo>("fortnite/api/version");
 
                 BuildNumber.Text = $"BUILD {info.build}";
@@ -64,7 +66,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
             }
             catch(Exception ex)
             {
-                Logger.Log($"HTTP Error | ${ex.ToString()}");
+                Logger.Log($"GET request failed! (OT10) | ${ex.ToString()}");
                 BuildInfo.Visibility = System.Windows.Visibility.Collapsed;
                 EasyNavigation.OpenNotice("Update Check Failed", "There was a problem determining if you need an update. You may or may not need an update. Error: 6");
             }
@@ -72,6 +74,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
 
         private async void GetAccessToken()
         {
+            Logger.Log("Attempting a POST request to /account/api/oauth/token (OT10)");
             try
             {
                 var body = new Dictionary<string, string>
@@ -118,6 +121,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
 
         private async Task AttemptAuthentication()
         {
+            Logger.Log("Attempting authentication using email and password. (OT10)");
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/fort_new_frontend_ui_click_13.ogg", 0.4f);
             ErrorText.Opacity = 0;
             LoginUI.Visibility = Visibility.Collapsed;
@@ -135,7 +139,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT10.LoginWindow
             }
             catch (Exception ex)
             {
-                Logger.Log($"Login failed | {ex}");
+                Logger.Log($"Login failed! Falling back to original menu. (OT10) | {ex}");
                 ErrorHandling.ThrowError();
 
                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>

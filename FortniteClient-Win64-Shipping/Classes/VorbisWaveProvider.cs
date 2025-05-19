@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Resources;
+using FortniteClient_Win64_Shipping.Classes;
 using NAudio.Wave;
 using NVorbis;
 
@@ -20,15 +21,23 @@ public class VorbisWaveProvider : IWaveProvider
 
     public int Read(byte[] buffer, int offset, int count)
     {
-        int samplesRequested = count / 4;
-        float[] floatBuffer = new float[samplesRequested];
+        try
+        {
+            int samplesRequested = count / 4;
+            float[] floatBuffer = new float[samplesRequested];
 
-        int samplesRead = _vorbisReader.ReadSamples(floatBuffer, 0, samplesRequested);
+            int samplesRead = _vorbisReader.ReadSamples(floatBuffer, 0, samplesRequested);
 
-        if (samplesRead == 0)
+            if (samplesRead == 0)
+                return 0;
+
+            Buffer.BlockCopy(floatBuffer, 0, buffer, offset, samplesRead * 4);
+            return samplesRead * 4;
+        }
+        catch(Exception ex) 
+        {
+            Logger.Log($"Vorbis: Failed to read bytes! {ex}");
             return 0;
-
-        Buffer.BlockCopy(floatBuffer, 0, buffer, offset, samplesRead * 4);
-        return samplesRead * 4;
+        }
     }
 }

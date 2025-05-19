@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Windows;
 
 namespace FortniteClient_Win64_Shipping.Classes
 {
@@ -11,15 +10,15 @@ namespace FortniteClient_Win64_Shipping.Classes
         static Logger()
         {
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            string logDirectory = Path.Combine(appDataPath, "FortGameReplica", "Log");
-            logFilePath = Path.Combine(logDirectory, $"FortniteGame.log");
-            File.Delete(logFilePath);
+            string logDirectory = Path.Combine(appDataPath, "FortGameReplica", "Logs");
 
             if (!Directory.Exists(logDirectory))
             {
                 Directory.CreateDirectory(logDirectory);
             }
-            logFilePath = Path.Combine(logDirectory, $"FortniteGame.log");
+
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            logFilePath = Path.Combine(logDirectory, $"FortniteGame-{timestamp}.log");
             File.Create(logFilePath).Dispose();
         }
 
@@ -32,7 +31,7 @@ namespace FortniteClient_Win64_Shipping.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Logging failed: " + ex.Message);
+                Console.WriteLine("Logging failed: " + ex.Message);
             }
         }
     }

@@ -25,6 +25,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.Loading
         public LoadingScreen()
         {
             InitializeComponent();
+            Logger.Log("Loading Online Test 11");
             StartLoadingAnim();
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
@@ -40,6 +41,7 @@ namespace FortniteClient_Win64_Shipping.UI.OT11.Loading
             await Task.Delay(2000);
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
+                Logger.Log("Triggering navigation to Login. (OT11)");
                 mainWindow.TriggerLogin();
             }
         }
