@@ -1,0 +1,25 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer.LoadNewVersion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer"
+      mc:Ignorable="d" 
+      Height="1080" Width="1920">
+
+    <Grid Name="Grid">
+        <Border Name="Backdrop" Opacity="1">
+            <Grid>
+                <DockPanel Background="Black" Opacity="0.8"/>
+                <Image Source="pack://application:,,,/Content/UI/Misc/OverlayBackdrop.png"/>
+            </Grid>
+        </Border>
+        <TextBlock Name="headerText" Text="We are loading your selected version!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Margin="0,0,0,581"/>
+        <DockPanel Background="#00534f" Width="720" Height="2" UseLayoutRounding="True" VerticalAlignment="Bottom" Margin="0,0,0,561"/>
+        <StackPanel VerticalAlignment="Top" Margin="0,535,0,0">
+            <TextBlock Name="descText" Text="Give us a moment, we are loading your new Fortnite version... This shouldn't take long!" HorizontalAlignment="Center" FontSize="24" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Width="700" TextWrapping="Wrap" TextAlignment="Center"/>
+
+            <TextBlock Name="descText2" Text="" HorizontalAlignment="Center" FontSize="24" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Width="700" TextWrapping="Wrap" TextAlignment="Center" Margin="0,30,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,50 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.ChooseVersion.ChooseVersion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.ChooseVersion"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="ChooseVersion">
+
+    <Grid>
+        <Border Name="Backdrop" Opacity="1">
+            <Grid>
+                <DockPanel Background="Black" Opacity="0.8"/>
+                <Image Source="pack://application:,,,/Content/UI/Misc/OverlayBackdrop.png"/>
+            </Grid>
+        </Border>
+
+        <TextBlock Text="Welcome!" Foreground="#dfdddf" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="25" Margin="25"/>
+
+        <Border Width="680" Height="900" CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#46281e" Offset="0"/>
+                    <GradientStop Color="#230e0c" Offset="0.10"/>
+                    <GradientStop Color="#230e0c" Offset="0.90"/>
+                    <GradientStop Color="#050202" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Margin="4">
+                <Border BorderBrush="#130503" BorderThickness="2" Background="#220d0b">
+                    <Grid>
+                        <TextBlock Text="Choose a version to launch." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="35" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" Foreground="#dfdddf" Margin="14"/>
+
+                        <Grid Margin="14,56,14,56">
+                            <StackPanel>
+                                <TextBlock Text="Online Tests" Foreground="#dfdddf" FontSize="19" Margin="0,0,0,10" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black"/>
+                                
+                                <Button Style="{StaticResource uibtn2}" Width="114" Height="36" HorizontalAlignment="Left" Content="OT6.5" FontSize="22" Click="LaunchOT6" Margin="0,0,0,10"/>
+                                <Button Style="{StaticResource uibtn2}" Width="114" Height="36" HorizontalAlignment="Left" Content="OT10.1" FontSize="22" Click="LaunchOT10" Margin="0,0,0,10"/>
+                                <Button Style="{StaticResource uibtn2}" Width="114" Height="36" HorizontalAlignment="Left" Content="OT11" FontSize="22" Click="LaunchOT11"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,147 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>FortniteClient_Win64_Shipping</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Content\Fort\Fortnite-Logo-Color-512.png" />
+    <None Remove="Content\Fort\Fortnite-Logo_Cine.png" />
+    <None Remove="Content\Sounds\AmbientLooping\Windchimes_Gentle02.ogg" />
+    <None Remove="Content\Sounds\Fort_Music\Menu\fortnite_homebase_music_loop.wav" />
+    <None Remove="Content\Sounds\Fort_Music\Menu\fortnite_login_screen.ogg" />
+    <None Remove="Content\Sounds\Fort_Music\Menu\store_tem_music_a.ogg" />
+    <None Remove="Content\Sounds\UI\Fort_Cancel_Button_01.ogg" />
+    <None Remove="Content\Sounds\UI\Fort_Menu_Misc_01.ogg" />
+    <None Remove="Content\Sounds\UI\fort_new_frontend_ui_click_13.ogg" />
+    <None Remove="Content\Sounds\UI\fort_new_frontend_ui_click_15.ogg" />
+    <None Remove="Content\Sounds\UI\fort_ui_new_chris_13.ogg" />
+    <None Remove="Content\Sounds\UI\fort_ui_open_stats.ogg" />
+    <None Remove="Content\UI\Loading\ATLAS_LoadingScreen.png" />
+    <None Remove="Content\UI\Loading\FORT_Load_Atlas.png" />
+    <None Remove="Content\UI\Loading\FORT_Load_STW.png" />
+    <None Remove="Content\UI\Loading\LoadingDots.png" />
+    <None Remove="Content\UI\Loading\Main_Loading.jpg" />
+    <None Remove="Content\UI\LoginWindow\BG_Login.jpg" />
+    <None Remove="Content\UI\LoginWindow\FORT_Homebase.png" />
+    <None Remove="Content\UI\Misc\OverlayBackdrop.png" />
+    <None Remove="Content\UI\Misc\SettingsIcon.png" />
+    <None Remove="Content\UI\OT11\Fortnite1024.png" />
+    <None Remove="Content\UI\OT11\LoginBGLazy.jpg" />
+    <None Remove="Font\BurbankBigRegular-Black.otf" />
+    <None Remove="Font\BurbankBigRegular-Bold.otf" />
+    <None Remove="Font\BurbankSmall-Black.ttf" />
+    <None Remove="Font\BurbankSmall-Bold.ttf" />
+    <None Remove="Font\BurbankSmall-Medium.ttf" />
+    <None Remove="Font\DroidSansFallback.ttf" />
+    <None Remove="Font\DroidSansMono.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Font\BurbankBigRegular-Black.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Content\Sounds\Fort_Music\Menu\fortnite_homebase_music_loop.wav">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\Fort_Music\Menu\store_tem_music_a.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\OT11\Fortnite1024.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\OT11\LoginBGLazy.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Font\BurbankBigRegular-Bold.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\BurbankSmall-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\BurbankSmall-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\BurbankSmall-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="NVorbis" Version="0.10.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Content\Fort\Fortnite-Logo-Color-512.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Fort\Fortnite-Logo_Cine.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\AmbientLooping\Windchimes_Gentle02.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\Fort_Music\Menu\fortnite_login_screen.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\Fort_Cancel_Button_01.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\Fort_Menu_Misc_01.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\fort_new_frontend_ui_click_13.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\fort_new_frontend_ui_click_15.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\fort_ui_new_chris_13.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\Sounds\UI\fort_ui_open_stats.ogg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Loading\ATLAS_LoadingScreen.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Loading\FORT_Load_Atlas.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Loading\FORT_Load_STW.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Loading\LoadingDots.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\LoginWindow\BG_Login.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\LoginWindow\FORT_Homebase.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Misc\OverlayBackdrop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Content\UI\Misc\SettingsIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Font\DroidSansMono.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\DroidSansFallback.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UI\OT10\" />
+  </ItemGroup>
+
+</Project>

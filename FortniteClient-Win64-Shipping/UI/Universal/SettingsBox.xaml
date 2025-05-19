@@ -1,0 +1,38 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.Universal.SettingsBox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.Universal"
+      mc:Ignorable="d" 
+      Height="226" Width="282"
+      Title="SettingsBox">
+
+    <Grid>
+        <Border Opacity="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#2e191b" Offset="0.2"/>
+                    <GradientStop Color="#66000000" Offset="0.6"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel>
+            <Button Width="250" Height="36" Style="{StaticResource uibtn2}" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="20" Click="ChooseVersion" Margin="0,16,0,0">
+                <TextBlock Text="Choose Version" Margin="0,4,0,0"/>
+            </Button>
+            <DockPanel Width="250" Height="2" Margin="0,8,0,8" Background="#46231a" HorizontalAlignment="Center"/>
+            <Button Width="250" Height="36" Margin="0,0,0,8" Style="{StaticResource uibtn2}" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="20">
+                <TextBlock Text="What's New" Margin="0,4,0,0"/>
+            </Button>
+            <DockPanel Width="250" Height="2" Margin="0,0,0,8" Background="#46231a" HorizontalAlignment="Center"/>
+            <Button Width="250" Height="36" Margin="0,0,0,8" Style="{StaticResource uibtn2}" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="20" Click="OpenOptions">
+                <TextBlock Text="Options" Margin="0,4,0,0"/>
+            </Button>
+            <DockPanel Width="250" Height="2" Margin="0,0,0,8" Background="#46231a" HorizontalAlignment="Center"/>
+            <Button Width="250" Height="36" Style="{StaticResource uibtn3}" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="20" Click="CloseFortnite">
+                <TextBlock Text="Quit To Desktop" Margin="0,4,0,0"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

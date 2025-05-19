@@ -1,0 +1,24 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.OT10.Loading.LoadingScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.OT10.Loading"
+      mc:Ignorable="d" 
+      Height="1080" Width="1920"
+      Title="LoadingScreen">
+
+    <Grid>
+        <Image Source="pack://application:,,,/Content/UI/Loading/FORT_Load_STW.png" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" Stretch="UniformToFill"/>
+        <Grid Name="Loading" Width="300" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontFamily="pack://application:,,,/Font/#Burbank Big Regular Black" Text="LOADING" Foreground="#cccccc" FontSize="60" Margin="0,0,18,0" FontWeight="Regular"/>
+                <Image Name="LoadingDots" Source="pack://application:,,,/Content/UI/Loading/LoadingDots.png" RenderOptions.BitmapScalingMode="HighQuality" Opacity="1" HorizontalAlignment="Right" Width="45" Height="45">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="LoadingDotsRotateTransform" CenterX="22.5" CenterY="22.5"/>
+                    </Image.RenderTransform>
+                </Image>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

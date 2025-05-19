@@ -1,0 +1,37 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.Universal.Settings.CloseFortnite"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.Universal.Settings"
+      mc:Ignorable="d" 
+      Height="1080" Width="1920"
+      Title="CloseFortnite">
+
+    <Grid Name="Grid">
+        <Border Name="Backdrop" Opacity="1">
+            <Grid>
+                <DockPanel Background="Black" Opacity="0.8"/>
+                <Image Source="pack://application:,,,/Content/UI/Misc/OverlayBackdrop.png"/>
+            </Grid>
+        </Border>
+        <TextBlock Text="Confirm Quit" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Margin="0,0,0,581"/>
+        <DockPanel Background="#00534f" Width="720" Height="2" UseLayoutRounding="True" VerticalAlignment="Bottom" Margin="0,0,0,561"/>
+        <TextBlock Text="Quit to Desktop?" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="24" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Margin="0,0,0,520"/>
+
+        <Button Click="Quit" Style="{StaticResource uibtn2}" Width="150" Height="36" Margin="800,0,0,460" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <TextBlock Text="Quit" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="24">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="0" ShadowDepth="2.5" Opacity="1"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Button>
+        <Button Click="Cancel" Style="{StaticResource uibtn3}" Width="150" Height="36" HorizontalAlignment="Right" Margin="0,0,800,460" VerticalAlignment="Bottom">
+            <TextBlock Text="Cancel" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="24">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="0" ShadowDepth="2.5" Opacity="1"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Button>
+    </Grid>
+</Page>

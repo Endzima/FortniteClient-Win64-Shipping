@@ -1,0 +1,128 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.OT11.LoginWindow.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.OT11.LoginWindow"
+      mc:Ignorable="d" 
+      Height="1080" Width="1920"
+      Title="Login">
+
+    <Page.Resources>
+        <Style x:Key="Email" TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="Background" Value="#6b788e"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="FontFamily" Value="/Font/BurbankSmall-Medium.ttf#Burbank Small Medium"/>
+            <Setter Property="Padding" Value="14,3,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Border x:Name="Border" CornerRadius="4" Background="{TemplateBinding Background}"/>
+                            <TextBlock x:Name="Placeholder" Text="Email" Margin="{TemplateBinding Padding}" FontSize="{TemplateBinding FontSize}" Foreground="#968a90" VerticalAlignment="Center" IsHitTestVisible="False" Visibility="Visible"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" Background="Transparent" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsFocused" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#E0E0E0"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Password" TargetType="PasswordBox">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#00736c"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="FontFamily" Value="/Font/BurbankSmall-Medium.ttf#Burbank Small Medium"/>
+            <Setter Property="Padding" Value="8,3,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Grid>
+                            <Border x:Name="Border" CornerRadius="4" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <TextBlock x:Name="Placeholder" Text="Password" Margin="{TemplateBinding Padding}" FontSize="{TemplateBinding FontSize}" Foreground="#968a90" VerticalAlignment="Center" IsHitTestVisible="False" Visibility="Visible"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" Background="Transparent" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsFocused" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#E0E0E0"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Opacity="1">
+        <Grid Name="PressToStart" Opacity="1" MouseLeftButtonDown="ShowLogin">
+            <Image Source="pack://application:,,,/Content/UI/OT11/LoginBGLazy.jpg" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" Stretch="UniformToFill"/>
+            <Image Source="pack://application:,,,/Content/UI/OT11/Fortnite1024.png" Width="1024" Height="320" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" VerticalAlignment="Top" IsHitTestVisible="False" Margin="0,256,0,0"/>
+
+            <TextBlock Text="PRESS TO CONTINUE" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,210" FontSize="29" Foreground="White" FontFamily="pack://application:,,,/Font/#Droid Sans" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Name="LoginBorder" Opacity="0" IsHitTestVisible="False">
+            <Border Width="800" Margin="0,0,0,254" Height="410" VerticalAlignment="Bottom">
+                <Border.Background>
+                    <SolidColorBrush Color="#b4bed0" Opacity="0.8"/>
+                </Border.Background>
+
+                <Grid>
+                    <Border Height="120" VerticalAlignment="Top" Background="#15182b" Opacity="1"/>
+                    <TextBlock Name="ErrorText" Margin="13,0,0,165" Text="Login failed." HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" Foreground="#c60000" FontSize="15" Opacity="0"/>
+                    <Grid Name="LoginUI" Margin="0,120,0,0">
+                        <TextBox Name="Email" Width="760" Height="57" VerticalAlignment="Top" Margin="0,73,0,0" TextChanged="EmailChanged" Style="{StaticResource Email}"/>
+                        <PasswordBox Name="Password" Width="760" Height="57" VerticalAlignment="Top" Margin="0,140,0,0" PasswordChanged="PasswordChanged" Style="{StaticResource Password}"/>
+
+                        <Button Name="LoginButton" Width="456" Height="36" VerticalAlignment="Bottom" Margin="0,0,0,208" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="25" Style="{StaticResource uibtn2}" IsEnabled="False" Click="LoginBtn" PreviewMouseLeftButtonDown="LoginPressed">
+                            <Grid>
+                                <TextBlock Text="Login">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="0" ShadowDepth="1.1" Opacity="1"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </Grid>
+                        </Button>
+                    </Grid>
+
+                    <Grid Name="LoggingIn" Margin="78,0,0,0" ClipToBounds="True" IsHitTestVisible="False" Visibility="Collapsed">
+                        <TextBlock Text="Logging in..." FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" Foreground="White" FontSize="32" Margin="0,5,0,291" VerticalAlignment="Bottom"/>
+                        <TextBlock Text="Signing in." FontFamily="/Font/BurbankSmall-Medium.ttf#Burbank Small Medium" Foreground="White" FontSize="23" Margin="0,20,0,257" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
