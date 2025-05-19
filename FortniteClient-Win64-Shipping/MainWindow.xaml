@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FortniteClient_Win64_Shipping"
         mc:Ignorable="d"
-        Title="Fortnite" Height="750" Width="1280" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+        Title="Fortnite" Height="750" Width="1280" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="None">
     <Grid>
         <Image Source="pack://application:,,,/Content/UI/Loading/ATLAS_LoadingScreen.png" Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality"/>
         <Frame Name="Login" NavigationUIVisibility="Hidden"/>
