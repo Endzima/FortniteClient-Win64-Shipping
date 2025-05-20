@@ -15,9 +15,9 @@
                 <Image Source="pack://application:,,,/Content/UI/Misc/OverlayBackdrop.png"/>
             </Grid>
         </Border>
-        <TextBlock Name="headerText" Text="" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Margin="0,0,0,581"/>
-        <DockPanel Background="#00534f" Width="720" Height="2" UseLayoutRounding="True" VerticalAlignment="Bottom" Margin="0,0,0,561"/>
-        <StackPanel VerticalAlignment="Top" Margin="0,530,0,0">
+        <StackPanel VerticalAlignment="Top" Margin="0,490,0,0">
+            <TextBlock Name="headerText" Text="" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Margin="0,0,0,15"/>
+            <DockPanel Background="#00534f" Width="720" Height="2" UseLayoutRounding="True" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
             <TextBlock Name="descText" Text="" HorizontalAlignment="Center" FontSize="24" FontFamily="/Font/BurbankSmall-Bold.ttf#Burbank Small Bold" Foreground="White" Width="700" TextWrapping="Wrap" TextAlignment="Center"/>
             <Button Name="button1" Click="Close" Style="{StaticResource uibtn2}" Width="150" Height="36" Margin="0,30,0,0" HorizontalAlignment="Center">
                 <TextBlock Name="buttonText" Text="Ok" FontFamily="/Font/BurbankSmall-Black.ttf#Burbank Small Black" FontSize="24">
