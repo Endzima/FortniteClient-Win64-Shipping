@@ -80,6 +80,6 @@
                 </Grid>
             </Grid>
         </Border>
-        <Image Source="pack://application:,,,/Content/Fort/Fortnite-Logo_Cine.png" Width="512" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" VerticalAlignment="Top" IsHitTestVisible="False" Margin="0,284,0,0"/>
+        <Image Source="pack://application:,,,/Content/Fort/Fortnite-Logo_Cine.png" Width="512" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" VerticalAlignment="Bottom" IsHitTestVisible="False" Margin="0,0,0,284"/>
     </Grid>
 </Page>
