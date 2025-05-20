@@ -38,7 +38,7 @@ namespace FortniteClient_Win64_Shipping.ChooseVersion
 
         private async void LaunchOT6(object sender, RoutedEventArgs e)
         {
-            Engine.SelectedVersion = "ot6";
+            Engine.SelectedVersion = "OT6";
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
             await Task.Delay(500);
             if (Application.Current.MainWindow is MainWindow mainWindow)
@@ -50,7 +50,7 @@ namespace FortniteClient_Win64_Shipping.ChooseVersion
 
         private async void LaunchOT10(object sender, RoutedEventArgs e)
         {
-            Engine.SelectedVersion = "ot10";
+            Engine.SelectedVersion = "OT10";
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
 
             await Task.Delay(500);
@@ -63,7 +63,33 @@ namespace FortniteClient_Win64_Shipping.ChooseVersion
 
         private async void LaunchOT11(object sender, RoutedEventArgs e)
         {
-            Engine.SelectedVersion = "ot11";
+            Engine.SelectedVersion = "OT11";
+            AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
+
+            await Task.Delay(500);
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.Settings.Content = null;
+                mainWindow.OpenLoading();
+            }
+        }
+
+        private async void LaunchPF(object sender, RoutedEventArgs e)
+        {
+            Engine.SelectedVersion = "FortressGame";
+            AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
+
+            await Task.Delay(500);
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.Settings.Content = null;
+                mainWindow.OpenLoading();
+            }
+        }
+
+        private async void LaunchOT2(object sender, RoutedEventArgs e)
+        {
+            Engine.SelectedVersion = "OT2";
             AudioPlayer.PlayTimedLoop("pack://application:,,,/Content/Sounds/UI/Fort_Cancel_Button_01.ogg", 0.4f);
 
             await Task.Delay(500);

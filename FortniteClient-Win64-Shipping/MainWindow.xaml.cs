@@ -62,7 +62,7 @@ namespace FortniteClient_Win64_Shipping
 
         public async void TriggerLogin()
         {
-            if (Engine.SelectedVersion == "ot6")
+            if (Engine.SelectedVersion == "OT6")
             {
                 Settings.Visibility = Visibility.Visible;
                 Login.Navigate(new UI.OT6.LoginWindow.Login());
@@ -70,7 +70,7 @@ namespace FortniteClient_Win64_Shipping
                 FG.IsHitTestVisible = false;
                 FG.Content = null;
             }
-            else if (Engine.SelectedVersion == "ot10")
+            else if (Engine.SelectedVersion == "OT10")
             {
                 Settings.Visibility = Visibility.Visible;
                 Login.Navigate(new UI.OT10.LoginWindow.Login());
@@ -78,10 +78,18 @@ namespace FortniteClient_Win64_Shipping
                 FG.IsHitTestVisible = false;
                 FG.Content = null;
             }
-            else if (Engine.SelectedVersion == "ot11")
+            else if (Engine.SelectedVersion == "OT11")
             {
                 Settings.Visibility = Visibility.Visible;
                 Login.Navigate(new UI.OT11.LoginWindow.Login());
+                await AnimationEngine.FadeOut(FG, 0.5);
+                FG.IsHitTestVisible = false;
+                FG.Content = null;
+            }
+            else if (Engine.SelectedVersion == "OT2")
+            {
+                Settings.Visibility = Visibility.Visible;
+                Login.Navigate(new UI.OT2.MainMenu.MainUI());
                 await AnimationEngine.FadeOut(FG, 0.5);
                 FG.IsHitTestVisible = false;
                 FG.Content = null;
@@ -132,6 +140,18 @@ namespace FortniteClient_Win64_Shipping
             FG.Visibility = Visibility.Visible;
             FG.Navigate(new UI.OT11.Loading.LoadingScreen());
         }
+
+        public void LaunchPF()
+        {
+            FG.Visibility = Visibility.Visible;
+            FG.Navigate(new UI.PF.Main.MainMenu());
+        }
+        public void LaunchOT2()
+        {
+            FG.Visibility = Visibility.Visible;
+            FG.Navigate(new UI.OT2.Loading.LoadingScreen());
+        }
+
 
         public void OpenLoading()
         {

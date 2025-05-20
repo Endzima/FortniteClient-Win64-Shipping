@@ -1,0 +1,100 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.PF.Main.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.PF.Main"
+      mc:Ignorable="d" 
+      MinHeight="1080" MinWidth="1920"
+      Title="MainMenu" Background="Black">
+
+    <Page.Resources>
+        <Style x:Key="Back" TargetType="Button">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="pack://application:,,,/Font/#LargoD"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="#41464a" Offset="0"/>
+                                    <GradientStop Color="#2f3339" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="pack://application:,,,/Font/#LargoD"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#666666" Padding="15,0,0,10">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#b3b3b3"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#dedede"/>
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#333333"/>
+                                <Setter Property="Cursor" Value="Arrow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <TextBlock Text="FORTNITE" Foreground="White" FontSize="70"  FontFamily="pack://application:,,,/Font/#LargoD" Margin="58,28,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="MAIN MENU" Foreground="White" FontSize="33" FontFamily="pack://application:,,,/Font/#LargoD" Margin="58,105,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Grid Name="Options" Opacity="0">
+            <TextBlock Name="OptionsActions" Text="Configure Fortnite game settings." Foreground="White" FontSize="21" FontFamily="pack://application:,,,/Font/#Insider Medium" Margin="58,380,0,0" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,500,0,0">
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Game Settings" MouseEnter="PlayHovered" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Keyboard/Mouse" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Audio" MouseEnter="OptionsHovered" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,195" Content="Video" IsEnabled="False"/>
+
+                <Button Width="200" Height="35" HorizontalAlignment="Left" Content="Back" Background="#33353a" Click="OptionsBackPressed" Style="{StaticResource Back}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Name="MainMenuBtns">
+            <TextBlock Name="ButtonAction" Text="Start your Fortnite adventure!" Foreground="White" FontSize="21" FontFamily="pack://application:,,,/Font/#Insider Medium" Margin="58,380,0,0" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,500,0,0">
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Play Game" MouseEnter="PlayHovered"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Profile" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Options" MouseEnter="OptionsHovered" Click="OptionsClicked"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Fortnite Store" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Extras" IsEnabled="False"/>
+                <Button Width="500" Height="60" HorizontalAlignment="Left" Margin="0,0,0,15" Content="Quit" MouseEnter="QuitHovered"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -40,12 +40,24 @@
     <None Remove="Font\BurbankSmall-Medium.ttf" />
     <None Remove="Font\DroidSansFallback.ttf" />
     <None Remove="Font\DroidSansMono.ttf" />
+    <None Remove="Font\InsiderW02-Medium.otf" />
+    <None Remove="Font\LargoD Regular.ttf" />
+    <None Remove="Font\LargoD.otf" />
+    <None Remove="Font\NanumGothic.ttf" />
+    <None Remove="Font\NotoNaskhArabicUI-Regular.ttf" />
+    <None Remove="Font\Roboto-Bold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Font\BurbankBigRegular-Black.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Font\LargoD.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\NanumGothic.ttf" />
+    <Content Include="Font\NotoNaskhArabicUI-Regular.ttf" />
+    <Content Include="Font\Roboto-Bold.ttf" />
     <Resource Include="Content\Sounds\Fort_Music\Menu\fortnite_homebase_music_loop.wav">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -132,6 +144,9 @@
     <Resource Include="Content\UI\Misc\SettingsIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Font\InsiderW02-Medium.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Font\DroidSansMono.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

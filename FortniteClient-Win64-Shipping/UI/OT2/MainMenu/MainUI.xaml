@@ -1,0 +1,52 @@
+﻿<Page x:Class="FortniteClient_Win64_Shipping.UI.OT2.MainMenu.MainUI"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FortniteClient_Win64_Shipping.UI.OT2.MainMenu"
+      mc:Ignorable="d" 
+      MinHeight="1080" MinWidth="1920"
+      Title="MainUI" Background="Gray">
+
+    <Grid>
+
+        <Grid Name="NavBar" VerticalAlignment="Top">
+            <Canvas HorizontalAlignment="Right" VerticalAlignment="Top" Width="930" Height="50">
+                <Path Fill="Black">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="0,0">
+                                <LineSegment Point="0,0" />
+                                <LineSegment Point="20,50" />
+                                <LineSegment Point="930,50" />
+                                <LineSegment Point="930,0" />
+                                <LineSegment Point="275,0" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+            <StackPanel Width="890" Height="50" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Heroes" FontFamily="pack://application:,,,/Font/#Burbank Small Bold" Style="{StaticResource uibtn2}" VerticalAlignment="Bottom" Height="32" Width="85" FontSize="20" Margin="0,0,5,0"/>
+                <Button Content="Overview" FontFamily="pack://application:,,,/Font/#Burbank Small Bold" Style="{StaticResource uibtn2}" VerticalAlignment="Bottom" Height="32" Width="105" FontSize="20" Margin="0,0,5,0"/>
+                <Button Content="Vault" FontFamily="pack://application:,,,/Font/#Burbank Small Bold" Style="{StaticResource uibtn2}" VerticalAlignment="Bottom" Height="32" Width="70" FontSize="20" Margin="0,0,5,0"/>
+                <Button FontFamily="pack://application:,,,/Font/#Burbank Small Bold" Style="{StaticResource uibtn2}" VerticalAlignment="Bottom" Height="32" Width="150" FontSize="20" Margin="0,0,5,0">
+                    <Grid>
+                        <TextBlock Text="Buildings" HorizontalAlignment="Left" Margin="0,0,40,0"/>
+                        <TextBlock Text="↓" HorizontalAlignment="Left" Margin="120,0,0,0"/>
+                    </Grid>
+                </Button>
+                <Button Content="Store" FontFamily="pack://application:,,,/Font/#Burbank Small Bold" Style="{StaticResource uibtn2}" VerticalAlignment="Bottom" Height="32" Width="75" FontSize="20" Margin="0,0,50,0"/>
+                <Grid Margin="0,0,20,0">
+                    <TextBlock Name="User" Text="[Testing] OT2User" Foreground="#6b783c" VerticalAlignment="Center" FontFamily="pack://application:,,,/Font/#Burbank Small Bold" FontSize="20" Margin="0,0,0,0"/>
+                </Grid>
+
+                <TextBlock Name="FortCoin" Foreground="White" FontFamily="pack://application:,,,/Font/#Burbank Small Medium" Text="1454" FontSize="20" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            </StackPanel>
+
+            <Button Width="30" Height="30" Margin="0,10,5,0" Style="{StaticResource uibtn2}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button Width="30" Height="30" Margin="0,10,35,0" Style="{StaticResource uibtn2}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Button Width="30" Height="30" Margin="0,10,65,0" Style="{StaticResource uibtn2}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Page>

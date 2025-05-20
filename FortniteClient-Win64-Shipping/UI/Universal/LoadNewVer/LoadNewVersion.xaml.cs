@@ -54,7 +54,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
             Logger.Log("Navigating to selected version.");
             try
             {
-                if (Engine.SelectedVersion == "ot10")
+                if (Engine.SelectedVersion == "OT10")
                 {
                     if (Application.Current.MainWindow is MainWindow mainWindow)
                     {
@@ -64,7 +64,7 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
                         await AudioPlayer.FadeOutMusic(2.0f);
                     }
                 }
-                else if (Engine.SelectedVersion == "ot11")
+                else if (Engine.SelectedVersion == "OT11")
                 {
                     if (Application.Current.MainWindow is MainWindow mainWindow)
                     {
@@ -75,11 +75,31 @@ namespace FortniteClient_Win64_Shipping.UI.Universal.LoadNewVer
                     }
                     //EasyNavigation.OpenNotice("You selected a version that is not available yet!", $"{Engine.SelectedVersion} is not currently available. Please pick a different version.");
                 }
-                else if (Engine.SelectedVersion == "ot6")
+                else if (Engine.SelectedVersion == "OT6")
                 {
                     if (Application.Current.MainWindow is MainWindow mainWindow)
                     {
                         mainWindow.LaunchOT6();
+                        mainWindow.KillSettings();
+                        await AnimationEngine.FadeOut(Grid, 0.20);
+                        await AudioPlayer.FadeOutMusic(2.0f);
+                    }
+                }
+                else if (Engine.SelectedVersion == "FortressGame")
+                {
+                    if (Application.Current.MainWindow is MainWindow mainWindow)
+                    {
+                        mainWindow.LaunchPF();
+                        mainWindow.KillSettings();
+                        await AnimationEngine.FadeOut(Grid, 0.20);
+                        await AudioPlayer.FadeOutMusic(2.0f);
+                    }
+                }
+                else if (Engine.SelectedVersion == "OT2")
+                {
+                    if (Application.Current.MainWindow is MainWindow mainWindow)
+                    {
+                        mainWindow.LaunchOT2();
                         mainWindow.KillSettings();
                         await AnimationEngine.FadeOut(Grid, 0.20);
                         await AudioPlayer.FadeOutMusic(2.0f);
